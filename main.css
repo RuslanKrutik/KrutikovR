@@ -7,7 +7,7 @@ body {
 
 main {
     background-color: lightslategray;
-    color: darkorange;
+    color: rgb(37, 30, 21);
     font-family: Arial;
     margin: 0px;
 }
@@ -23,4 +23,28 @@ header {
     color: darkorange;
     font-family: Arial;
     margin: 0px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+a:link {
+    color: rgb(48, 18, 18);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: rgb(0, 89, 255);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
 }
