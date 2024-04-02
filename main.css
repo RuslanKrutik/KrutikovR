@@ -6,21 +6,27 @@ body {
 }
 
 main {
-    background-color: lightslategray;
+    background-color: rgba(136, 226, 226, 0.801);
     color: rgb(37, 30, 21);
     font-family: Arial;
-    margin: 0px;
+    margin: 10px 20px 45px;
+
 }
 footer {
-    background-color: lightslategray;
-    color: darkorange;
+    background-color: darkcyan;
+    color: rgba(223, 219, 219, 0.815);
     font-family: Arial;
     margin: 0px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
 }
 
 header {
-    background-color: lightslategray;
-    color: darkorange;
+    background-color: darkcyan;
+    color:  rgba(223, 219, 219, 0.815);
     font-family: Arial;
     margin: 0px;
 }
@@ -49,4 +55,16 @@ a:hover {
 a:active {
     color: black;
     opacity: 0.3;
+}
+
+div.menu {
+    border: 7px solid darkcyan;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+div.menu:hover {
+    background-color: rgba(192, 190, 190, 0.075);
+    box-shadow: 0 0 15px rgb(37, 36, 36);
 }
