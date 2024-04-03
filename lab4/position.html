@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="Лаборотнорная 4">
+    <title>Позиционирование</title>
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        div{
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: white;
+            border: 1px dotted darkgreen;
+            margin: 15px;
+        }
+
+        .position-relative {
+            position: relative;
+            left: 128px;
+            top: -128px;
+            z-index: -1
+        }
+        .position-absolute {
+            position: absolute;
+            left: 300px;
+            border: 3px solid darkcyan;
+            border-radius: 5px;
+
+        }
+        .position-absolute:hover {
+        background-color: rgb(192, 190, 190);
+        box-shadow: 0 0 15px rgb(1, 5, 4);
+        block-size: 10%;
+        }
+
+
+    </style>
+</head> 
+<body>
+    <header>
+        НГТУ, ФБ, Лаборотнорная работа 4
+    </header>
+        <hr>
+    <main>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
