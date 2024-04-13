@@ -13,7 +13,14 @@
             let result = a + b;
             alert("Сумма "+a+" и "+b+" равна " + result);
         }
-        showSum();
+        function showAuthor() {
+            let author = "Автор страницы: \nКрутиков Руслан Олегович"
+            alert(author);
+        }
+        function showGreetings() {
+            let author = "Приветствую вас на моей страничке!: \nЧто разум человека может постигнуть и во что он может поверить, того он способен достичь"
+            alert(author);
+        }
     </script>
     <style>
         .message {
@@ -32,16 +39,16 @@
     </style>
 </head>
 <body>
-    <header>
+    <header onclick="showAuthor()">
         НГТУ, ФБ, Лаборотнорная работа 5
     </header>
         <hr>
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
-    <footer>
+    <footer ondblclick="showGreetings()">
         <hr>
         &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
     </footer>
