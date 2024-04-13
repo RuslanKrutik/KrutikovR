@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="арифметика">
+    <title>Лабороторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <script>
+        function showSum() {
+            let a = 5154;
+            let b = 7819;
+            let result = a + b;
+            alert("Сумма "+a+" и "+b+" равна " + result);
+        }
+        showSum();
+    </script>
+    <style>
+        .message {
+            border: 10px solid red;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(to right top,gold,white,blue);
+            border: 5px green;
+            display: inline-block;
+            cursor: pointer
+            
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лаборотнорная работа 5
+    </header>
+        <hr>
+    <main>
+        <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+        <div class="message">Узнать, кто автор страницы</div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
