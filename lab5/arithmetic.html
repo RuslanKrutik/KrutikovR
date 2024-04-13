@@ -24,6 +24,13 @@
             let author = "Приветствую вас на моей страничке!: \nЧто разум человека может постигнуть и во что он может поверить, того он способен достичь"
             alert(author);
         }
+        function changeOutput(buttonNum, backColor, textColor, br_color) {
+            let output = document.getElementById('output');
+            output.innerHTML = "Нажата кнопка" + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderColor = br_color;
+        }
     </script>
     <style>
         .message {
@@ -36,7 +43,11 @@
             border: 5px green;
             display: inline-block;
             cursor: pointer
-            
+        }
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
 
         }
     </style>
@@ -51,6 +62,14 @@
         <label>Второе число: <input type="number" value="7891" id="numberB"><br></label>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'green')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', 'red')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'white', 'green', 'black')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'darkcyan', 'white', 'lightblue')">
+        </div>
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="showGreetings()">
