@@ -34,7 +34,7 @@ header {
 a {
     color: white;
     text-decoration: none;
-    transition: 0.5s 1s;
+    transition: 0.5s;
 }
 a:link {
     color: rgb(48, 18, 18);
@@ -43,18 +43,17 @@ a:link {
 
 a:visited {
     color: rgb(0, 89, 255);
-    text-decoration: underline;
 }
 
 a:hover {
     color: red;
     text-decoration: underline;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 a:active {
     color: black;
-    opacity: 0.3;
+    opacity: 0.1;
 }
 
 div.menu {
@@ -67,4 +66,16 @@ div.menu {
 div.menu:hover {
     background-color: rgba(192, 190, 190, 0.075);
     box-shadow: 0 0 15px rgb(37, 36, 36);
+}
+div.line_a {
+    line-height: 20px;
+    text-align: center;
+    background-color: rgb(15, 200, 233);
+    margin: 2px;
+    width: 220px;
+    display: block;
+
+}
+div.line_a:hover {
+    background-color: blue;
 }
