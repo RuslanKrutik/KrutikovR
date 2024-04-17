@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="Лаборотнорная 5">
+    <title>Лабороторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script>
+        function Out_circles(id) {
+            let out = document.getElementById(id);
+            out.style.width = '0px'
+            out.style.height = '0px'
+            out.style.opacity = '0'
+            out.style.transition = '0.5s'
+        }
+        function return_circles() {
+            let up = document.getElementById('return')
+            out.style.width = backWidth
+            out.style.height = backHeight
+            out.style.opacity = backOpacity
+        }
+    </script>
+    <style>
+        form{
+            border: 8px solid darkcyan;
+            border-radius: 50px;
+            text-align: center;
+            margin-left:  auto;
+            margin-right: auto;
+            width: 600px}
+        label{
+            display: block;
+        }
+        div{
+            position: relative;
+            border: 5px solid white;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            border-radius: 50px;
+            border-radius: 50px;}
+        .OUT{
+            width: 0px;
+            height: 0px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лаборотнорная работа 5
+    </header>
+        <hr>
+    <main>
+        <form>
+            <div style="background: red;" id="1" onclick="Out_circles(id)">1</div>
+            <div style="background: green; left: 280px" id="2" onclick="Out_circles(id)">2</div>
+            <div style="background: yellow; left: 100px" id="3" onclick="Out_circles(id)">3</div>
+            <div style="background: gray;" id="4" onclick="Out_circles(id)">4</div>
+            <div style="background: pink; left: 300px" id="5" onclick="Out_circles(id)">5</div>
+            <div style="background: lightblue; left: 400px" id="6" onclick="Out_circles(id)">6</div>
+            <div style="background: gold; left: 150px" id="7" onclick="Out_circles(id)">7</div>
+            <div style="background: orange; left: 300px" id="8" onclick="Out_circles(id)">8</div>
+            <div style="background-color: aqua; left: 20px" id="9" onclick="Out_circles(id)">9</div>
+            <div style="background-color:chocolate; left: 200px" id="10" onclick="Out_circles(id)">10</div>
+            <input type="reset" value="Очистить" onclick="return_circles" id = 'return'>
+        </form>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
