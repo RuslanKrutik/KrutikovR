@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="Лаборотнорная 5">
+    <title>Лабороторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script>
+        function showSum() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let inputC = document.getElementById('numberC');
+            let inputD = document.getElementById('numberD');
+            let inputE = document.getElementById('numberE');
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+            let e = parseInt(inputE.value);
+            let result = a*50+b*60+c*40+d*20+e*50
+            return result}
+
+        function changeOutput() {
+            let output = document.getElementById('output');
+            output.innerHTML = "общая сумма: " + showSum() + " рублей"
+        }
+        
+        function Clean() {
+        }
+    </script>
+    <style>
+        form{
+            border: 8px solid darkcyan;
+            border-radius: 50px;
+            text-align: center;
+            margin-left:  auto;
+            margin-right: auto;
+            width: 600px}
+        label{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лаборотнорная работа 5
+    </header>
+        <hr>
+    <main>
+        <form>
+            <h1 style="text-align: center">Корзина товаров</h1>
+            <label>Огурцы (50р/шт): <input type="number" value="0" id="numberA" min="0" placeholder="Укажите количество"></label><br>
+            <label>Помидоры (60р/шт): <input type="number" value="0" id="numberB" min="0" placeholder="Укажите количество"></label><br>
+            <label>Яблоки (40р/шт): <input type="number" value="0" id="numberC" min="0" placeholder="Укажите количество"></label><br>
+            <label>Сливы (20р/шт): <input type="number" value="0" id="numberD" min="0" placeholder="Укажите количество"></label><br>
+            <label>Грушы (50р/шт): <input type="number" value="0" id="numberE" min="0" placeholder="Укажите количество"></label><br>
+            <input type="button" value="Рассчитать" onclick="changeOutput()" />
+            <input type="reset" value="Отчистить" onclick="Clean()"  />
+            <label id="output"></label>
+        </form>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
