@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="Лаборотнорная 5">
+    <title>Лабороторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script>
+        function blurChange() {
+            let value = document.getElementById('blurValue').value + 'px';
+            document.getElementById('blurOutput').innerText = value
+            document.getElementById("Image1").style.filter = 'blur(' +value +')';
+        }
+        function brightness_change() {
+            let value = document.getElementById('brightness').value + '%';
+            document.getElementById('brightnessOutput').innerText = value
+            document.getElementById("Image2").style.filter = 'brightness(' +value +')';
+        }
+        function contrast_change() {
+            let value = document.getElementById('contrast').value + '%';
+            document.getElementById('contrastOutput').innerText = value
+            document.getElementById("Image3").style.filter = 'brightness(' +value +')';
+        }
+        function grayscale_change() {
+            let value = document.getElementById('grayscale').value + '%';
+            document.getElementById('grayscaleOutput').innerText = value
+            document.getElementById("Image4").style.filter = 'grayscale(' +value +')';
+        }
+        function hue_rotate_change() {
+            let value = document.getElementById('hue-rotate').value;
+            document.getElementById('hue-rotateOutput').innerText = value
+            document.getElementById("Image5").style.filter = 'hue-rotate(' +value +')';
+        }
+        function invert_change() {
+            let value = document.getElementById('invert').value + '%';
+            document.getElementById('invertOutput').innerText = value
+            document.getElementById("Image6").style.filter = 'invert(' +value +')';
+        }
+        function saturate_change() {
+            let value = document.getElementById('saturate').value + '%';
+            document.getElementById('saturateOutput').innerText = value
+            document.getElementById("Image7").style.filter = 'saturate(' +value +')';
+        }
+        function sepia_change() {
+            let value = document.getElementById('sepia').value + '%';
+            document.getElementById('sepiaOutput').innerText = value
+            document.getElementById("Image8").style.filter = 'sepia(' +value +')';
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лаборотнорная работа 5
+    </header>
+        <hr>
+    <main>
+        <div>
+            Фильтр Blur:
+            <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blurValue">
+            <span id ="blurOutput"></span>
+        
+        </div>
+        <div><img src="voronin.png" id="Image1"></div>
+        
+        <div>
+            Фильтр brightness:
+            <input type="range" min="0" max="100" value="0" onchange="brightness_change()" id="brightness">
+            <span id ="brightnessOutput"></span>
+            
+        </div>
+
+        <div><img src="voronin.png" id="Image2"></div>
+        
+        <div>
+            Фильтр contrast:
+            <input type="range" min="0" max="100" value="0" onchange="contrast_change()" id="contrast">
+            <span id ="contrastOutput"></span>
+            
+        </div>
+        <div><img src="voronin.png" id="Image3"></div>
+        
+        <div>
+            Фильтр grayscale:
+            <input type="range" min="0" max="100" value="0" onchange="grayscale_change()" id="grayscale">
+            <span id ="grayscaleOutput"></span>
+        
+        </div>
+        <div><img src="voronin.png" id="Image4"></div>
+
+        <div>
+            Фильтр hue-rotate:
+            <input type="range" min="0" max="360" value="0" onchange="hue_rotate_change()" id="hue-rotate">
+            <span id ="hue-rotateOutput"></span>
+        </div>
+        <div><img src="voronin.png" id="Image5"></div>
+        
+        <div>
+            Фильтр invert:
+            <input type="range" min="0" max="100" value="0" onchange="invert_change()" id="invert">
+            <span id ="invertOutput"></span>
+        
+        </div>
+            <div><img src="voronin.png" id="Image6"></div>
+
+        <div>
+            Фильтр saturate:
+            <input type="range" min="0" max="500" value="0" onchange="saturate_change()" id="saturate">
+            <span id ="saturateOutput"></span>
+            
+        </div>
+            <div><img src="voronin.png" id="Image7"></div>
+        <div>
+            Фильтр sepia:
+            <input type="range" min="0" max="500" value="0" onchange="sepia_change()" id="sepia">
+            <span id ="sepiaOutput"></span>
+                
+        </div>
+            <div><img src="voronin.png" id="Image8"></div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
