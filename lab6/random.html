@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="Лаборотнорная 5">
+    <title>Лабороторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        .game {
+            border: 5px solid grey;
+            border-radius: 10%;
+            margin-top: 10px;
+            text-align: center;
+            margin-left: 100px;
+            margin-right: 100px;
+            background-color: white;
+        }
+    </style>
+    <script>
+        let number;
+        let count = 0;
+        function startGame() {
+            number = Math.floor(Math.random() * 100 + 1 );
+            let screens = document.getElementsByClassName('game');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+
+        }
+        function guess() {
+            let input = document.getElementById('user-number')
+            let userNumber = parseInt(input.value);
+            let message = document.getElementById('result');
+            if(userNumber > number) {
+                count ++;
+                message.innerHTML = 'Вы ввели слишком большое число'
+            }
+            else if(userNumber > 100 || userNumber < 1) {
+                message.innerHTML = 'Число в диапозоне от 1 до 100!'
+            }
+            else if (userNumber < number) {
+                count ++;
+                message.innerHTML = 'Вы ввели слишком маленькое число'
+            }
+            
+            else if (isNaN(userNumber)){
+                message.innerHTML = "Вы не ввели число"
+            }
+            else {
+                count ++;
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                document.getElementById('number').innerHTML = number;
+                document.getElementById('try-count').innerHTML = count;   
+            }
+            
+        }
+        function again(params) {
+            let screens = document.getElementsByClassName('game');
+            screens[2].style.display = 'none';
+            screens[1].style.display = 'block';
+            number = Math.floor(Math.random() * 100 + 1 )
+            document.getElementById('user-number').value = ""
+            document.getElementById('result').innerHTML= " "
+            document.getElementById('try-count').value = ""
+            }
+        function rules() {
+            let screens = document.getElementsByClassName('game');
+            screens[4].style.display = 'block';
+            document.getElementById('unrules').style.display = "block";
+            screens[3].style.display = 'none'
+
+        }
+        function Unrules() {
+            let screens = document.getElementsByClassName('game');
+            screens[4].style.display = 'none';
+            document.getElementById('unrules').style.display = "none"
+            screens[3].style.display = 'block'
+            
+    }
+
+
+    </script>
+
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лаборотнорная работа 5
+    </header>
+        <hr>
+    <main>
+        <div class="game">
+            <button onclick="startGame()">
+                Сыграть в игру
+            </button>
+        </div>
+        <div class="game" style="display: none">
+            <h1>Угадай число!</h1>
+            <div>
+                Задумано число от 1 до 100. Угадайте, какое?<br>
+                <input type="number" value="" min="1" max="100" id="user-number"><br>
+                <button onclick="guess()">Угадать</button>
+                <div id="result"></div>
+            </div>
+        </div>
+
+        <div class="game" style="display: none">
+            <h1>Поздравляем вы выйграли!</h1>
+            <div>
+                Задуманное число: <span id="number"></span>
+            </div>
+            <div>
+                Количество попыток: <span id="try-count"></span>
+            </div>
+            <div>
+                <button onclick="again()">Cыграть еще раз</button>
+            </div>
+        </div>
+        <div class="game">
+            <button onclick="rules()">
+                Показать правила игры
+            </button>
+        </div>
+        <div class="game" style="display: none;">
+            Всё слишком очевидно, чтобы писать на это правила!
+            <button onclick="Unrules()" id ="unrules" style="display: none;">
+                скрыть павила игры
+            </button>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
