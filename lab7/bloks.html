@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="Лаборотнорная 5">
+    <title>Лабороторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <script>
+        function addNewBlock() {
+            let newBlock = document.createElement('div')
+            newBlock.style.backgroundColor = "black";
+            newBlock.style.height = "40px";
+
+            document.querySelector('main').appendChild(newBlock);
+        }
+    </script>
+    <style>
+        div {
+            border: 10px solid blueviolet;
+            margin-top: 10px;
+            text-align: center;
+            margin-left: 100px;
+            margin-right: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лаборотнорная работа 7
+    </header>
+        <hr>
+    <main>
+        <button  onclick="addNewBlock()">Добавить блок</button>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
