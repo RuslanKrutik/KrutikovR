@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Лабораторная 7">
+    <title>Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <script>
+        function showExchange() {
+            const exchange = [
+                90.2486, 90.1887, 90.4082, 90.6537, 90.9873,
+                90.9239, 91.2573, 91.3591, 91.6330, 91.9898
+            ];
+            let table = document.getElementById('dollar-table');
+            for(let i = 0; i < exchange.length; i++){
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            } 
+
+            let sum = 0;
+            for(let i = 0; i < exchange.length; i++) {
+                sum += exchange[i];
+            }
+            let average = sum / exchange.length;
+            average = average.toFixed(2);
+
+            // Вывод среднего значения на страницу
+            let detailDiv = document.getElementById('detail');
+            detailDiv.innerText = `Средний курс доллара: ${average}`;
+
+            // Скрытие кнопки после нажатия
+            let button = document.querySelector('button[onclick="showExchange()"]');
+            button.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <hr>
+    <main>
+        <button onclick="showExchange()">Курс доллара</button>
+        <table border="1" id="dollar-table"></table>
+        <div id="detail"></div>
+    </main>
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
