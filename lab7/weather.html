@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Лабораторная 7">
+    <title>Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        .weather-report {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .weather-report h2 {
+            margin-top: 0;
+        }
+        .weather-report p {
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        function getWeatherForecast() {
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(json => {
+                    const times = json.hourly.time;
+                    const temperatures = json.hourly.temperature_2m;
+
+                    const today = new Date().toISOString().split('T')[0]; // Получить сегодняшнюю дату в формате YYYY-MM-DD
+                    const timesOfInterest = [`${today}T08:00`, `${today}T12:00`, `${today}T20:00`];
+                    
+                    let weatherDetails = '';
+                    
+                    timesOfInterest.forEach(time => {
+                        const index = times.indexOf(time);
+                        if (index !== -1) {
+                            const temperature = temperatures[index];
+                            const hour = time.split('T')[1].split(':')[0];
+                            weatherDetails += `<p>Температура в ${hour}:00: ${temperature} °C</p>`;
+                        } else {
+                            weatherDetails += `<p>Нет данных для ${time}</p>`;
+                        }
+                    });
+
+                    const detailDiv = document.getElementById('detail');
+                    detailDiv.innerHTML = `
+                        <div class="weather-report">
+                            <h2>Прогноз погоды на сегодня в Новосибирске</h2>
+                            ${weatherDetails}
+                        </div>
+                    `;
+                })
+                .catch(error => {
+                    console.error('Ошибка при получении данных:', error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <hr>
+    <main>
+        <button onclick="getWeatherForecast()">Получить прогноз погоды</button>
+        <div id="detail"></div>
+    </main>
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
