@@ -52,6 +52,17 @@
                 main.appendChild(newBlock);
             }
         }
+
+        function addCircles() {
+            let main = document.querySelector('main');
+            main.innerHTML = '';
+            for (let i = 10; i >= -80; i -= 3) {
+                let newCircle = document.createElement('div');
+                newCircle.className = 'circle';
+                newCircle.innerHTML = `${i}`;
+                main.appendChild(newCircle);
+            }
+        }
     </script>
     <style>
         .block {
@@ -75,6 +86,16 @@
             height: 20px;
             width: 40px;
         }
+        .circle {
+            display: inline-block; /* Включить горизонтальное размещение */
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; /* Сделать круг */
+            background-color: lightblue;
+            text-align: center;
+            line-height: 20px; /* Вертикальное выравнивание текста */
+            margin-right: 5px; /* Отступ между кругами */
+        }
         main {
             height: 80vh;
             overflow-y: auto;
@@ -93,6 +114,7 @@
         <button onclick="addNewBlock()">Добавить блок</button>
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
+        <button onclick="addCircles()">10 => -80</button>
     </main>
     <footer>
         <hr>
