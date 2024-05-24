@@ -78,6 +78,22 @@
                 main.appendChild(newBlock);
             }
         }
+
+        function addColoredCircles() {
+            let main = document.querySelector('main');
+            let numCircles = parseInt(document.getElementById('numCircles').value) || 10;
+
+            // Clear any existing blocks
+            main.innerHTML = '';
+
+            for (let i = numCircles; i > 0; i--) {
+                let newCircle = document.createElement('div');
+                newCircle.className = 'circle';
+                newCircle.innerHTML = `${i}`;
+                newCircle.style.backgroundColor = (i % 2 === 0) ? 'green' : 'red';
+                main.appendChild(newCircle);
+            }
+        }
     </script>
     <style>
         .block {
@@ -103,13 +119,13 @@
         }
         .circle {
             display: inline-block; /* Включить горизонтальное размещение */
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%; /* Сделать круг */
-            background-color: lightblue;
             text-align: center;
-            line-height: 20px; /* Вертикальное выравнивание текста */
+            line-height: 30px; /* Вертикальное выравнивание текста */
             margin-right: 5px; /* Отступ между кругами */
+            color: white; /* Цвет текста */
         }
         .opacity-block {
             border: 1px solid black; /* Рамка для блоков с непрозрачностью */
@@ -142,6 +158,10 @@
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="addCircles()">10 => -80</button>
         <button onclick="addOpacityBlocks()">Добавить блоки с непрозрачностью</button>
+        <br><br>
+        <label for="numCircles">Количество кругов:</label>
+        <input type="number" id="numCircles" value="10">
+        <button onclick="addColoredCircles()">Создать красные и зеленые круги</button>
     </main>
     <footer>
         <hr>
