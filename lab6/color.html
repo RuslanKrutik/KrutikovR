@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="Лаборотнорная 5">
+    <title>Лабороторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        .color {
+            display: inline-block;
+            border: 5px solid yellow;
+            text-align: center;
+            background-color: yellow;
+            cursor: grab;
+        }
+    </style>
+    <script>
+        function changeColor(div) {
+            if(div.style.backgroundColor == 'yellow'){
+            div.style.backgroundColor = "red"
+            document.getElementById('color-name').innerHTML = 'красный';
+            div.style.border = "red"
+            }
+            else if(div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = "black";
+                document.getElementById("color-name").innerHTML = "черный";
+                div.style.color = "white"
+                div.style.border = "black"
+            }
+            else if(div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = "green";
+                document.getElementById("color-name").innerHTML = "черный";
+                div.style.border = "green"
+
+            }
+            else if(div.style.backgroundColor == 'green') {
+                div.style.backgroundColor = "blue";
+                document.getElementById("color-name").innerHTML = "черный";
+                div.style.border = "blue"
+
+            }
+            else {
+                div.style.backgroundColor = "yellow";
+                document.getElementById('color-name').innerHTML = "желтый";
+                div.style.color = "black"
+                div.style.border = "yellow"
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лаборотнорная работа 5
+    </header>
+        <hr>
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+        Цвет: <span id="color-name">желтый</span><br>
+        Сделайте двойной щелчек, чтобы сменить.
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
