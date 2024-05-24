@@ -55,12 +55,27 @@
 
         function addCircles() {
             let main = document.querySelector('main');
+            // Clear any existing blocks
             main.innerHTML = '';
             for (let i = 10; i >= -80; i -= 3) {
                 let newCircle = document.createElement('div');
                 newCircle.className = 'circle';
                 newCircle.innerHTML = `${i}`;
                 main.appendChild(newCircle);
+            }
+        }
+
+        function addOpacityBlocks() {
+            let main = document.querySelector('main');
+            // Clear any existing blocks
+            main.innerHTML = '';
+            let numBlocks = 10;
+            for (let i = 1; i <= numBlocks; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.className = 'opacity-block';
+                newBlock.innerHTML = `${i}`;
+                newBlock.style.opacity = i / numBlocks; // Увеличивающаяся непрозрачность
+                main.appendChild(newBlock);
             }
         }
     </script>
@@ -96,6 +111,17 @@
             line-height: 20px; /* Вертикальное выравнивание текста */
             margin-right: 5px; /* Отступ между кругами */
         }
+        .opacity-block {
+            border: 1px solid black; /* Рамка для блоков с непрозрачностью */
+            margin-top: 10px;  /* Отступы между блоками */
+            text-align: center;
+            margin-left: 100px;
+            margin-right: 100px;
+            background-color: lightcoral;
+            height: 40px;
+            width: 100px;
+            color: white;
+        }
         main {
             height: 80vh;
             overflow-y: auto;
@@ -115,6 +141,7 @@
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="addCircles()">10 => -80</button>
+        <button onclick="addOpacityBlocks()">Добавить блоки с непрозрачностью</button>
     </main>
     <footer>
         <hr>
