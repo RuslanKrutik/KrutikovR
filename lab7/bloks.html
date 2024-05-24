@@ -3,16 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="Крутиков Руслан" content="Лаборотнорная 5">
-    <title>Лабороторная 7</title>
+    <meta name="description" content="Лабораторная 7">
+    <title>Лабораторная 7</title>
     <link rel="stylesheet" href="../main.css">
     <script>
         function addNewBlock() {
-            let newBlock = document.createElement('div')
+            let newBlock = document.createElement('div');
             newBlock.style.backgroundColor = "black";
             newBlock.style.height = "40px";
 
             document.querySelector('main').appendChild(newBlock);
+        }
+
+        function addNewBlocks() {
+            let width = 100;
+            let widthIncrement = 30;
+            let main = document.querySelector('main');
+            let numBlocks = parseInt(document.getElementById('numBlocks').value) || 10;
+
+            // Clear any existing blocks
+            main.innerHTML = '';
+
+            for(let i = 0; i < numBlocks; i++){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = "black";
+                newBlock.style.height = "40px";
+                newBlock.innerHTML = `Блок № ${i+1}: 2*${i}<sup>2</sup> = ${2*i**2}`;
+                newBlock.style.color = "white";
+                newBlock.style.width = (width + (i * widthIncrement)) + 'px';
+
+                main.appendChild(newBlock);
+            }
         }
     </script>
     <style>
@@ -22,21 +43,24 @@
             text-align: center;
             margin-left: 100px;
             margin-right: 100px;
-
+            width: 100px;
         }
     </style>
 </head>
 <body>
     <header>
-        НГТУ, ФБ, Лаборотнорная работа 7
+        НГТУ, ФБ, Лабораторная работа 7
     </header>
-        <hr>
+    <hr>
     <main>
-        <button  onclick="addNewBlock()">Добавить блок</button>
+        <label for="numBlocks">Количество блоков:</label>
+        <input type="number" id="numBlocks" value="10">
+        <button onclick="addNewBlock()">Добавить блок</button>
+        <button onclick="addNewBlocks()">Добавить блоки</button>
     </main>
-
     <footer>
         <hr>
         &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
     </footer>
 </body>
+</html>
