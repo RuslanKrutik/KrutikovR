@@ -1,0 +1,143 @@
+
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Крутиков Руслна. Лабораторная 6.</title> 
+    <link rel="stylesheet" href="../main.css"> 
+    <script> 
+        function Itog(){ 
+            let itog = document.getElementById('itog'); 
+            let result = document.getElementById('result'); 
+            let balance = document.getElementById('balance').value; 
+            let inpfoot = document.getElementById('foot'); 
+            let inptmaik = document.getElementById('maik'); 
+            let inpkoft = document.getElementById('kof'); 
+            let inptapki = document.getElementById('tapki'); 
+            let inpsemi = document.getElementById('semi'); 
+            let inptiri = document.getElementById('tiri'); 
+            let inppoz = document.getElementById('poz'); 
+            let foot = parseInt(inpfoot.value); 
+            let maik = parseInt(inptmaik.value); 
+            let koft = parseInt(inpkoft.value); 
+            let tapki = parseInt(inptapki.value); 
+            let semi = parseInt(inpsemi.value); 
+            let tiri = parseInt(inptiri.value); 
+            let poz = parseInt(inppoz.value);  
+            let summa = foot*1000 + maik*500 + koft*500 + tapki*200 + semi*60+ tiri*650 + poz*900; 
+
+
+            if (foot < 0  || maik < 0 || koft < 0 || tapki < 0 || semi < 0 || tiri < 0 || poz < 0) { 
+                document.getElementById('result').innerHTML = 'Кол-во не может быть меньше 0'; 
+            } 
+            else if (inpfoot.value == "0" && inptmaik.value == "0" && inpkoft.value == "0" && inptapki.value == "0" && inpsemi.value == "0" && inptiri.value == "0" && inppoz.value == "0") { 
+                document.getElementById('result').innerHTML = 'Выберите хотя бы один товар'; 
+            } 
+            else if (balance < summa) { 
+                empty = false 
+                document.getElementById('result').innerHTML = 'Итого: ' + summa + ' р. У вас недостаточно денег!'; 
+            } 
+            else { 
+                empty = false 
+                document.getElementById('result').innerHTML = 'Покупка успешно оформлена на сумму: ' + summa + ' р.'; 
+            } 
+        } 
+    </script> 
+    <style> 
+        div{ 
+            text-align: center; 
+        } 
+        .balance{ 
+            padding: 10px; 
+            text-align: center; 
+        } 
+        table{ 
+            background-color: rgb(95, 207, 245); 
+            margin-left: auto; 
+            margin-right: auto; 
+        } 
+        td{ 
+            padding: 4px; 
+        } 
+        button{ 
+            font-size: 20pt; 
+        } 
+        .button{ 
+            margin-top: 20px; 
+            width: 54px; 
+            height: 50px; 
+            margin-left: auto; 
+            margin-right: auto; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <header> 
+        НГТУ, ФБ, Лабораторная 6 
+    </header> 
+    <main> 
+        <div class="balance"> 
+            Мой баланс: <input type="number" placeholder="Введите ваш баланс" min="0" id="balance"> 
+        </div> 
+        <div class="cart"> 
+            <table border="1"> 
+                <tr> 
+                    <td></td> 
+                    <td>Название</td> 
+                    <td>Цена</td> 
+                    <td>Количество</td> 
+                </tr> 
+                <tr> 
+                    <td>1</td> 
+                    <td>Футболка</td> 
+                    <td>1000 р</td> 
+                    <td><input type="number" placeholder="Введите количество" id="foot" value="0"></td> 
+                </tr> 
+                <tr> 
+                    <td>2</td>
+                    <td>Майка</td> 
+                    <td>500 р</td> 
+                    <td><input type="number" placeholder="Введите количество" id="maik" value="0"></td> 
+                </tr> 
+                <tr> 
+                    <td>3</td> 
+                    <td>Кофта</td> 
+                    <td>500 р</td> 
+                    <td><input type="number" placeholder="Введите количество" id="kof" value="0"></td> 
+                </tr> 
+                <tr> 
+                    <td>4</td> 
+                    <td>Тапки</td> 
+                    <td>200 р</td> 
+                    <td><input type="number" placeholder="Введите количество" id="tapki" value="0"></td> 
+                </tr> 
+                <tr> 
+                    <td>5</td> 
+                    <td>Носки</td> 
+                    <td>60 р</td> 
+                    <td><input type="number" placeholder="Введите количество" id="semi" value="0"></td> 
+                </tr> 
+                <tr> 
+                    <td>6</td> 
+                    <td>Трикотажные штаны</td> 
+                    <td>650 р</td> 
+                    <td><input type="number" placeholder="Введите количество" id="tiri" value="0"></td> 
+                </tr> 
+                <tr> 
+                    <td>7</td> 
+                    <td>Розовые очки</td> 
+                    <td>900 р</td> 
+                    <td><input type="number" placeholder="Введите количество" id="poz" value="0"></td> 
+                </tr> 
+            </table> 
+        </div> 
+        <div class="button"><button onclick="Itog()">OK</button></div> 
+        <div id="result"></div> 
+    </main> 
+
+    <footer> 
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024 
+    </footer> 
+</body> 
+</html>
