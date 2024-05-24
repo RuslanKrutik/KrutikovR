@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Лабораторная 7">
+    <title>Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        .exchange-rate {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .exchange-rate h2 {
+            margin-top: 0;
+        }
+        .exchange-rate p {
+            margin: 5px 0;
+        }
+        .exchange-rate .diff-up {
+            color: green;
+        }
+        .exchange-rate .diff-down {
+            color: red;
+        }
+        .source-link {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+    <script>
+        function getExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js'
+            fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(json){
+                    const eur = json.Valute.EUR;
+                    const currentRate = eur.Value;
+                    const previousRate = eur.Previous;
+                    const date = json.Date;
+
+                    const diff = currentRate - previousRate;
+                    const diffText = diff > 0 ? 
+                        `<span class="diff-up">поднялся на ${diff.toFixed(2)} руб.</span>` : 
+                        `<span class="diff-down">опустился на ${diff.toFixed(2)} руб.</span>`;
+
+                    const detailDiv = document.getElementById('detail');
+                    detailDiv.innerHTML = `
+                        <div class="exchange-rate">
+                            <h2>Курс евро на ${new Date(date).toLocaleDateString()}</h2>
+                            <p>Текущий курс: ${currentRate} руб.</p>
+                            <p>Курс за предыдущий день: ${previousRate} руб.</p>
+                            <p>Курс ${diffText}</p>
+                        </div>
+                        <div class="source-link">
+                            Данные предоставлены <a href="https://www.cbr-xml-daily.ru/" target="_blank">Центральным банком России</a>.
+                        </div>
+                    `;
+                });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <hr>
+    <main>
+        <button onclick="getExchangeRate()">Получить курс евро</button>
+        <div id="detail"></div>
+    </main>
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
