@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="Лаборотнорная 5">
+    <title>Лабороторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <script>
+        function filter() {
+            let color = document.getElementById("wear-color").value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById("wear");
+        
+            if (color == 'Красный' && type == 'Футболка') {
+                wear.src = 'ref-f.jpg';
+            }
+            else if(color == 'Зеленый' && type == 'Футболка') {
+                wear.src = 'green-f.png';
+            }
+            else if (color == 'Белый' && type == 'Футболка') {
+                wear.src = 'white-f.jpg';
+            }
+            else if (color == 'Красный' && type == 'Майка') {
+                wear.src = 'red-m.jpg';
+            }
+            else if(color == 'Зеленый' && type == 'Майка') {
+                wear.src = 'green-m.jpg';
+            }
+            else if (color == 'Белый' && type == 'Майка') {
+                wear.src = 'white-m.jpg';
+            }
+            else if (color == 'Красный' && type == 'Поло') {
+                wear.src = 'red-p.jpg';
+            }
+            else if(color == 'Зеленый' && type == 'Поло') {
+                wear.src = 'green-p.jpg';
+            }
+            else if (color == 'Белый' && type == 'Поло') {
+                wear.src = 'white-p.png';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лаборотнорная работа 5
+    </header>
+        <hr>
+    <main>
+        <div class="menu">
+            Цвет одежды
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Зеленый</option>
+                <option>Белый</option>
+            </select><br>
+
+            Тип одежды
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+
+            <button onclick="filter()">ОК</button><br>
+            <img id="wear" height="200px">
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
