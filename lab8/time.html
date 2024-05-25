@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="Лабораторная 5">
+    <title>Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <script src="time.js"></script>
+    <style>
+        #time {
+            position: absolute;
+            top: 28px;
+            right: 0px;
+            font-size: 1.2em;
+            color: #FFD700;
+            background-color: #4a415c;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        #seconds {
+            font-size: 5em;
+            color: #ff0800;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body onload="showTime()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+        <div id="time">00:00:00</div>
+    </header>
+    <hr>
+    <main>
+        <div id="seconds"></div>
+    </main>
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
