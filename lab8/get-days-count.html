@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="Лабораторная 5">
+    <title>Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <script src="get-days-count.js"></script>
+    <style>
+        .input-section {
+            margin-top: 20px;
+        }
+        .input-section input, .input-section button {
+            padding: 10px;
+            margin-right: 10px;
+            font-size: 1em;
+        }
+        .input-section button {
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .input-section button:hover {
+            background-color: #0056b3;
+        }
+        #days-count, #day-of-week {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+        #clear-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #clear-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+    <hr>
+    <main>
+        <div class="input-section">
+            <label style="color: wheat;">Дата рождения: <input type="date" id="birthday"></label>
+            <button onclick="showDaysCount()">Показать число дней</button>
+            <button id="clear-button" onclick="clearFields()">Очистить</button>
+        </div>
+        <div id="days-count"></div>
+        <div id="day-of-week"></div>
+    </main>
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
