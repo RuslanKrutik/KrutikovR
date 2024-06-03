@@ -14,19 +14,56 @@
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
             let result = a + b;
-            alert("Сумма "+a+" и "+b+" равна " + result);
+            alert("Сумма " + a + " и " + b + " равна " + result);
         }
+
+        function showDifference() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert("Разность " + a + " и " + b + " равна " + result);
+        }
+
+        function showProduct() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert("Произведение " + a + " и " + b + " равно " + result);
+        }
+
+        function showQuotient() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            if (b === 0) {
+                alert("Деление на ноль невозможно");
+            } else {
+                let result = a / b;
+                alert("Частное " + a + " и " + b + " равно " + result);
+            }
+        }
+
         function showAuthor() {
-            let author = "Автор страницы: \nКрутиков Руслан Олегович"
+            let author = "Автор страницы: \nКрутиков Руслан Олегович";
             alert(author);
         }
+
         function showGreetings() {
-            let author = "Приветствую вас на моей страничке!: \nЧто разум человека может постигнуть и во что он может поверить, того он способен достичь"
+            let author = "Приветствую вас на моей страничке !: \nЧто разум человека может постигнуть и во что он может поверить, того он способен достичь";
             alert(author);
         }
+
         function changeOutput(buttonNum, backColor, textColor, br_color) {
             let output = document.getElementById('output');
-            output.innerHTML = "Нажата кнопка" + buttonNum;
+            output.innerHTML = "Нажата кнопка " + buttonNum;
             output.style.backgroundColor = backColor;
             output.style.color = textColor;
             output.style.borderColor = br_color;
@@ -39,16 +76,16 @@
             border-radius: 10px;
             margin: 5px;
             box-shadow: 10px 10px 5px #0002;
-            background: linear-gradient(to right top,gold,white,blue);
+            background: linear-gradient(to right top, gold, white, blue);
             border: 5px green;
             display: inline-block;
-            cursor: pointer
+            cursor: pointer;
         }
+
         #output {
             border: 1px solid;
             width: 300px;
             height: 40px;
-
         }
     </style>
 </head>
@@ -56,11 +93,14 @@
     <header onclick="showAuthor()">
         НГТУ, ФБ, Лаборотнорная работа 5
     </header>
-        <hr>
+    <hr>
     <main>
         <label>Первое число: <input type="number" value="5154" id="numberA"><br></label>
         <label>Второе число: <input type="number" value="7891" id="numberB"><br></label>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        <div class="message" onclick="showDifference()">Вычесть числа</div>
+        <div class="message" onclick="showProduct()">Умножить числа</div>
+        <div class="message" onclick="showQuotient()">Разделить числа</div>
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
 
         <div>
@@ -78,3 +118,8 @@
     </footer>
 </body>
 </html>
+
+
+
+
+
