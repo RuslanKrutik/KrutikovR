@@ -29,7 +29,7 @@
             document.getElementById("Image4").style.filter = 'grayscale(' +value +')';
         }
         function hue_rotate_change() {
-            let value = document.getElementById('hue-rotate').value;
+            let value = document.getElementById('hue-rotate').value + "deg";
             document.getElementById('hue-rotateOutput').innerText = value
             document.getElementById("Image5").style.filter = 'hue-rotate(' +value +')';
         }
@@ -69,7 +69,7 @@
         
         <div>
             Фильтр brightness:
-            <input type="range" min="0" max="100" value="0" onchange="brightness_change()" id="brightness">
+            <input type="range" min="0" max="500" value="0" onchange="brightness_change()" id="brightness">
             <span id ="brightnessOutput"></span>
             
         </div>
