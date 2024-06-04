@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Крутиков Руслан" content="Лабораторная 5">
+    <title>Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <script src="lab8.js"></script>
+    <style>
+        #current-date {
+            font-size: 1.5em;
+            color: #fcfcfc;
+            margin-bottom: 20px;
+        }
+        #locale-dates {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .locale-date {
+            background-color: #e2e3e5;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .locale-date span {
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .input-section {
+            margin-top: 20px;
+        }
+        .input-section input {
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .input-section button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+    <hr>
+    <main>
+        <div id="current-date"></div>
+        <div id="locale-dates"></div>
+        <div id="additional-info"></div>
+        <div class="input-section">
+            <input type="number" id="input-day" placeholder="День" min="1" max="31">
+            <input type="number" id="input-month" placeholder="Месяц" min="1" max="12">
+            <input type="number" id="input-year" placeholder="Год" min="1">
+            <button onclick="showDayOfWeek()">День недели</button>
+        </div>
+        <div id="day-of-week"></div>
+    </main>
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
