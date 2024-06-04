@@ -21,8 +21,6 @@
             let widthIncrement = 30;
             let main = document.querySelector('main');
             let numBlocks = parseInt(document.getElementById('numBlocks').value) || 10;
-
-            // Clear any existing blocks
             main.innerHTML = '';
 
             for(let i = 0; i < numBlocks; i++){
@@ -55,7 +53,6 @@
 
         function addCircles() {
             let main = document.querySelector('main');
-            // Clear any existing blocks
             main.innerHTML = '';
             for (let i = 10; i >= -80; i -= 3) {
                 let newCircle = document.createElement('div');
@@ -67,7 +64,6 @@
 
         function addOpacityBlocks() {
             let main = document.querySelector('main');
-            // Clear any existing blocks
             main.innerHTML = '';
             let numBlocks = 10;
             for (let i = 1; i <= numBlocks; i++) {

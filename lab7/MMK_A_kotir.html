@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Лабораторная 7">
+    <title>Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <script>
+        function showExchange() {
+            const COURSE = [
+                56.79, 58.20, 58.17, 58.28, 58.90, 58.69, 59.19,
+                59.31, 59.57 
+            ];
+            const DATE = [
+                "13.05.2024", "14.05.2024", "15.05.2024", "16.05.2024",
+                "17.05.2024", "20.05.2024", "21.05.2024", "22.05.2024",
+                "23.05.2024"
+            ];
+
+            let table = document.getElementById('dollar-table');
+            table.innerHTML = "<tr><th>Дата</th><th>Цена акций</th><th>Разница</th></tr>";
+            for(let i = 0; i < COURSE.length; i++){
+                let tr = document.createElement('tr');
+                let tdDate = document.createElement('td');
+                tdDate.innerText = DATE[i];
+                tr.appendChild(tdDate);
+
+                let tdCourse = document.createElement('td');
+                tdCourse.innerText = COURSE[i];
+                tr.appendChild(tdCourse);
+
+                let tdDiff = document.createElement('td');
+                if (i === 0) {
+                    tdDiff.innerText = "-";
+                } else {
+                    let diff = COURSE[i] - COURSE[i - 1];
+                    tdDiff.innerText = diff.toFixed(2);
+                }
+                tr.appendChild(tdDiff);
+
+                table.appendChild(tr);
+            }
+
+            let sum = COURSE.reduce((a, b) => a + b, 0);
+            let average = (sum / COURSE.length).toFixed(2);
+            let max = Math.max(...COURSE).toFixed(2);
+            let min = Math.min(...COURSE).toFixed(2);
+
+            let detailDiv = document.getElementById('detail');
+            detailDiv.innerHTML = `
+                <p>Среднее значение стоимости акции: ${average}</p>
+                <p>Максимальное значение стоимости акции: ${max}</p>
+                <p>Минимальное значение стоимости акции: ${min}</p>
+            `;
+
+            let button = document.querySelector('button[onclick="showExchange()"]');
+            button.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <hr>
+    <main>
+        <button onclick="showExchange()">Курс акций ММК</button>
+        <table border="1" id="dollar-table"></table>
+        <div id="detail"></div>
+    </main>
+    <footer>
+        <hr>
+        &copy; Крутиков Руслан, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
