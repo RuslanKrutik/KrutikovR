@@ -15,11 +15,26 @@
             out.style.opacity = '0'
             out.style.transition = '0.5s'
         }
+        function return_circle(id) {
+            let circles = document.getElementById(id);
+            circles.style.width = '100px'
+            circles.style.height = '100px'
+            circles.style.opacity = '1'
+            
+        }
         function return_circles() {
-            let up = document.getElementById('return')
-            out.style.width = backWidth
-            out.style.height = backHeight
-            out.style.opacity = backOpacity
+            return_circle("1");
+            return_circle("2");
+            return_circle("3");
+            return_circle("4");
+            return_circle("5");
+            return_circle("6");
+            return_circle("7");
+            return_circle("8");
+            return_circle("9");
+            return_circle("10");
+
+            
         }
     </script>
     <style>
@@ -41,11 +56,6 @@
             border-radius: 50px;
             border-radius: 50px;
             border-radius: 50px;}
-        .OUT{
-            width: 0px;
-            height: 0px;
-            opacity: 0;
-        }
     </style>
 </head>
 <body>
@@ -65,7 +75,7 @@
             <div style="background: orange; left: 300px" id="8" onclick="Out_circles(id)">8</div>
             <div style="background-color: aqua; left: 20px" id="9" onclick="Out_circles(id)">9</div>
             <div style="background-color:chocolate; left: 200px" id="10" onclick="Out_circles(id)">10</div>
-            <input type="reset" value="Очистить" onclick="return_circles" id = 'return'>
+            <input type="button" value="Очистить" onclick="return_circles()" id = 'return'>
         </form>
     </main>
 

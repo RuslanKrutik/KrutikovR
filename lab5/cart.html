@@ -28,6 +28,9 @@
         }
         
         function Clean() {
+            let output = document.getElementById('output');
+            output.innerHTML = ""
+
         }
     </script>
     <style>
@@ -58,7 +61,7 @@
             <label>Сливы (20р/шт): <input type="number" value="0" id="numberD" min="0" placeholder="Укажите количество"></label><br>
             <label>Грушы (50р/шт): <input type="number" value="0" id="numberE" min="0" placeholder="Укажите количество"></label><br>
             <input type="button" value="Рассчитать" onclick="changeOutput()" />
-            <input type="reset" value="Отчистить" onclick="Clean()"  />
+            <input type="reset" value="Отчистить" onclick="Clean()" id="clean"  />
             <label id="output"></label>
         </form>
     </main>
